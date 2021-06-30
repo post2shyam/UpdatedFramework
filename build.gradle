@@ -28,5 +28,5 @@ task clean(type: Delete) {
 }
 
 ext{
-
+    timber_version = '4.7.1'
 }
