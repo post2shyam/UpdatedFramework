@@ -1,9 +1,9 @@
-package com.post2shyam.updatedframework.application
+package com.post2shyam.updatedframework.system.storage
 
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
-import com.post2shyam.updatedframework.application.storage.IPersistanceStore
+import com.post2shyam.updatedframework.system.IPersistanceStore
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
