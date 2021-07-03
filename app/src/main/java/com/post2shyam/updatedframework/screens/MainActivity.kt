@@ -1,9 +1,11 @@
-package com.post2shyam.updatedframework
+package com.post2shyam.updatedframework.screens
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.post2shyam.updatedframework.application.PersistanceStore
+import com.post2shyam.updatedframework.R
+import com.post2shyam.updatedframework.system.storage.PersistanceStore
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 import javax.inject.Inject
 
 
@@ -16,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        Timber.d("Writing to persistence store")
         persistanceStore.writeInt(90)
     }
 }
