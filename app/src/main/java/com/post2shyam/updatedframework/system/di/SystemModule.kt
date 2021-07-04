@@ -1,5 +1,7 @@
 package com.post2shyam.updatedframework.system.di
 
+import com.post2shyam.updatedframework.BuildConfig
+import com.post2shyam.updatedframework.system.logger.AnalyticsLogTree
 import com.post2shyam.updatedframework.system.logger.DebugLogTree
 import dagger.Module
 import dagger.Provides
@@ -11,7 +13,12 @@ import timber.log.Timber
 @InstallIn(SingletonComponent::class)
 class SystemModule {
     @Provides
-    fun provideLoggingTree() : Timber.Tree{
-        return DebugLogTree()
+    fun provideLoggingTree(): Timber.Tree {
+        return if (BuildConfig.DEBUG) {
+            //DebugLogTree()
+            AnalyticsLogTree()
+        } else {
+            AnalyticsLogTree()
+        }
     }
 }
